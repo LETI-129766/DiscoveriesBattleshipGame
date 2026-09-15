@@ -8,4 +8,3 @@
 | LETI | 129769 | Tiago Ribeiro |
 | LETI | 129797 | Simão Duarte |
 
-Basic academic version of Battleship game to build upon.
