@@ -33,17 +33,44 @@
 
 ## Descrição dos navios usados no jogo
 
-O jogo da Batalha Naval consiste em quatro tipos diferentes de navios usados no jogo:
+O jogo da Batalha Naval consiste em **cinco** tipos diferentes de navios usados onde cada um ocupa diferentes numeros de quadrados como é referido na tabela seguinte :
 
-| Nome do Navio | Espaço que ocupa|
-|---|---|
+| Nome do Navio | Quadrados que ocupa|
+|:---:|:---:|
 |Porta-aviões|  5 quadrados|
 |Navios de 4 canhões| 4 quadrados|
 |Navios de 3 canhões| 3 quadrados|
 |Navios de 2 canhões| 2 quadrados|
 |Submarinos|  1 quadrado|
 
+##Imagens dos navios usados no tempo dos Descobrimentos
 
+Galeão:
 
+![alt text][Galeao]
 
+Fragata:
+![alt text][Fragata]
+
+Nau:
+
+![alt text][Nau]
+
+Caravela:
+
+![alt text][Caravela]
+
+Barca:
+
+![alt text][Barca]
+
+[Galeao]: https://st.depositphotos.com/1007373/2567/i/450/depositphotos_25678231-stock-photo-pirate-galleon-ship-on-the.jpg "Galeao"
+
+[Fragata]: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMr8fG77m8c-MP8isICZ1t13gUR6U2A7q5a-SuHhDsiODbAyq6SWMqTlbnABhiYZXUkt8w_udW1i57-2KVdx2BbgHg5InktuX5WkLX4MS71F1SZ64azhEwYMMF1ysPoqgVjl1BT08K8IRgoP0Qb2Hd4ErP_pfGccDWdbhWRD7diCEF4MBqK5rtG3T_xg/s4600/1497-1499%20Nau%20S%C3%A3o%20Gabriel.jpg "Fragata"
+
+[Nau]: https://upload.wikimedia.org/wikipedia/commons/d/d3/Santa-Maria.jpg?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original "Nau"
+
+[Caravela]: https://upload.wikimedia.org/wikipedia/commons/a/a2/Caravela_Vera_Cruz_no_rio_Tejo.jpg?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original "Caravela"
+
+[Barca]: https://upload.wikimedia.org/wikipedia/commons/2/22/Barinel.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original "Barca"
 
