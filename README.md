@@ -43,24 +43,24 @@ O jogo da Batalha Naval consiste em **cinco** tipos diferentes de navios usados 
 |Navios de 2 canhões| 2 quadrados|
 |Submarinos|  1 quadrado|
 
-##Imagens dos navios usados no tempo dos Descobrimentos
+## Imagens dos navios usados no tempo dos Descobrimentos
 
-Galeão:
+[Galeão](https://pt.wikipedia.org/wiki/Gale%C3%A3o)
 
 ![alt text][Galeao]
 
-Fragata:
+[Fragata](https://pt.wikipedia.org/wiki/Fragata)
 ![alt text][Fragata]
 
-Nau:
+[Nau](https://pt.wikipedia.org/wiki/Nau)
 
 ![alt text][Nau]
 
-Caravela:
+[Caravela](https://pt.wikipedia.org/wiki/Caravela)
 
 ![alt text][Caravela]
 
-Barca:
+[Barca](https://pt.wikipedia.org/wiki/Barca)
 
 ![alt text][Barca]
 
@@ -73,4 +73,6 @@ Barca:
 [Caravela]: https://upload.wikimedia.org/wikipedia/commons/a/a2/Caravela_Vera_Cruz_no_rio_Tejo.jpg?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original "Caravela"
 
 [Barca]: https://upload.wikimedia.org/wikipedia/commons/2/22/Barinel.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original "Barca"
+
+
 
