@@ -1,5 +1,6 @@
 # Battleship ⛵
 
+
 ## Índice
 
 - [Grupo dos Besties](#grupo-dos-besties)
@@ -7,6 +8,8 @@
 - [Regras do jogo](#regras-do-jogo)
 - [Descrição dos navios usados no jogo](#descrição-dos-navios-usados-no-jogo)
 - [Imagens dos navios usados no tempo dos Descobrimentos](#imagens-dos-navios-usados-no-tempo-dos-descobrimentos)
+- [Créditos](#créditos)
+
 
 ## Grupo dos Besties
 
@@ -15,6 +18,7 @@
 | LETI | 129766 | Ana Sofia Mateus Marques |
 | LETI | 129769 | Tiago Miguel Gomes Ribeiro |
 | LETI | 129797 | Simão Pedroso Duarte |
+
 
 ## Informações
 
@@ -26,6 +30,7 @@
 - No início do jogo, cada jogador coloca os seus navios na sua própria grelha, sem que o adversário veja a sua posição;
 - Durante o jogo, os jogadores tentam descobrir a posição dos navios do adversário através de ataques;
 - O objetivo é **afundar todos os navios do adversário**.
+
 
 ## Regras do jogo
 
@@ -50,6 +55,7 @@ O jogo da Batalha Naval utiliza **cinco** tipos de navios, cada um com uma dimen
 | Nau | 3 | 2 |
 | Caravela | 2 | 3 |
 | Barca | 1 | 4 |
+
 
 ## Imagens dos navios usados no tempo dos Descobrimentos
 
@@ -83,4 +89,6 @@ O jogo da Batalha Naval utiliza **cinco** tipos de navios, cada um com uma dimen
 [Barca]: https://upload.wikimedia.org/wikipedia/commons/2/22/Barinel.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original "Barca"
 
 
+## Créditos
 
+Projeto desenvolvido no âmbito da unidade curricular **Engenharia de Software**, da **Licenciatura em Engenharia de Telecomunicações e Informática** do **ISCTE-IUL**.
