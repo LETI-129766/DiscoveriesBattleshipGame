@@ -1,5 +1,6 @@
 # Battleship ⛵
 
+
 ## Índice
 
 - [Grupo dos Besties](#grupo-dos-besties)
@@ -7,6 +8,8 @@
 - [Regras do jogo](#regras-do-jogo)
 - [Descrição dos navios usados no jogo](#descrição-dos-navios-usados-no-jogo)
 - [Imagens dos navios usados no tempo dos Descobrimentos](#imagens-dos-navios-usados-no-tempo-dos-descobrimentos)
+- [Créditos](#créditos)
+
 
 ## Grupo dos Besties
 
@@ -16,40 +19,43 @@
 | LETI | 129769 | Tiago Miguel Gomes Ribeiro |
 | LETI | 129797 | Simão Pedroso Duarte |
 
+
 ## Informações
 
-- A **Batalha Naval** é um jogo para **dois jogadores**.
-- Esta versão do jogo é inspirada no **tempo dos Descobrimentos** ***(Discoveries Battleship Game)***.
-- Cada jogador possui **duas grelhas de 10x10** quadrados.
-- Uma grelha é utilizada para **posicionar os seus navios**.
-- A outra grelha é utilizada para **registar os ataques ao adversário**.
-- No início do jogo, cada jogador coloca os seus navios na sua própria grelha, sem que o adversário veja a sua posição.
-- Durante o jogo, os jogadores tentam descobrir a posição dos navios do adversário através de ataques.
+- A **Batalha Naval** é um jogo para **dois jogadores**;
+- Esta versão do jogo é inspirada no **tempo dos Descobrimentos** ***(Discoveries Battleship Game)***;
+- Cada jogador possui **duas grelhas de 10x10** quadrados;
+- Uma grelha é utilizada para **posicionar os seus navios**;
+- A outra grelha é utilizada para **registar os ataques ao adversário**;
+- No início do jogo, cada jogador coloca os seus navios na sua própria grelha, sem que o adversário veja a sua posição;
+- Durante o jogo, os jogadores tentam descobrir a posição dos navios do adversário através de ataques;
 - O objetivo é **afundar todos os navios do adversário**.
+
 
 ## Regras do jogo
 
-- Os navios podem ser colocados na **horizontal ou vertical**.
-- Os navios **não podem tocar uns nos outros**.
-- Os navios podem estar encostados às **bordas da grelha**.
-- Os jogadores jogam **alternadamente**.
-- Em cada turno, o jogador escolhe uma posição da grelha adversária para atacar.
-- O adversário indica se o ataque foi **água** ou **acertou num navio**.
-- Quando todas as posições de um navio forem atingidas, este é **afundado**.
+- Os navios podem ser colocados na **horizontal ou vertical**;
+- Os navios **não podem tocar uns nos outros**;
+- Os navios podem estar encostados às **bordas da grelha**;
+- Os jogadores jogam **alternadamente**;
+- Em cada turno, o jogador escolhe as coordenadas de três tiros contra a frota adversária;
+- O adversário informa o resultado de cada tiro: se calhou na **água** ou se **acertou num navio**, e nesse caso, de que tipo;
+- Quando todas as posições de um navio forem atingidas, este é **afundado**;
 - Ganha o jogador que **afundar todos os navios do adversário**.
 
 
 ## Descrição dos navios usados no jogo
 
-O jogo da Batalha Naval consiste em **cinco** tipos diferentes de navios usados onde cada um ocupa diferentes numeros de quadrados como é referido na tabela seguinte :
+O jogo da Batalha Naval utiliza **cinco** tipos de navios, cada um com uma dimensão e uma quantidade específicas como referido na tabela seguinte:
 
-| Nome do Navio | Quadrados que ocupa|
-|:---:|:---:|
-|Porta-aviões|  5 quadrados|
-|Navios de 4 canhões| 4 quadrados|
-|Navios de 3 canhões| 3 quadrados|
-|Navios de 2 canhões| 2 quadrados|
-|Submarinos|  1 quadrado|
+| Nome do Navio (Descobrimentos) | Quadrados que ocupa | Quantidade |
+|:---:|:---:|:---:|
+| Galeão | 5 | 1 |
+| Fragata | 4 | 1 |
+| Nau | 3 | 2 |
+| Caravela | 2 | 3 |
+| Barca | 1 | 4 |
+
 
 ## Imagens dos navios usados no tempo dos Descobrimentos
 
@@ -83,4 +89,6 @@ O jogo da Batalha Naval consiste em **cinco** tipos diferentes de navios usados 
 [Barca]: https://upload.wikimedia.org/wikipedia/commons/2/22/Barinel.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original "Barca"
 
 
+## Créditos
 
+Projeto desenvolvido no âmbito da unidade curricular **Engenharia de Software**, da **Licenciatura em Engenharia de Telecomunicações e Informática** do **ISCTE-IUL**.
