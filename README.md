@@ -1,5 +1,13 @@
 # Battleship ⛵
 
+## Índice
+
+- [Grupo dos Besties](#grupo-dos-besties)
+- [Informações](#informações)
+- [Regras do jogo](#regras-do-jogo)
+- [Descrição dos navios usados no jogo](#descrição-dos-navios-usados-no-jogo)
+- [Imagens dos navios usados no tempo dos Descobrimentos](#imagens-dos-navios-usados-no-tempo-dos-descobrimentos)
+
 ## Grupo dos Besties
 
 | Curso | Número | Nome |
