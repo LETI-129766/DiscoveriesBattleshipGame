@@ -1,7 +1,3 @@
-```java
-/**
- *
- */
 package iscteiul.ista.battleship;
 
 /**
@@ -56,4 +52,4 @@ public class Carrack extends Ship {
     }
 
 }
-```
+

@@ -1,7 +1,3 @@
-```java
-/**
- *
- */
 package iscteiul.ista.battleship;
 
 /**
@@ -72,4 +68,4 @@ public enum Compass {
         return bearing;
     }
 }
-```
+
