@@ -1,7 +1,3 @@
-```java
-/**
- *
- */
 package iscteiul.ista.battleship;
 
 /**
@@ -62,4 +58,4 @@ public class Caravel extends Ship {
     }
 
 }
-```
+
