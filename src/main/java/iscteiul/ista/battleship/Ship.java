@@ -1,25 +1,58 @@
-/**
- *
- */
 package iscteiul.ista.battleship;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * Classe base abstrata para todos os navios do jogo Discoveries Battleship Game.
+ * <p>
+ * Guarda a informação comum a qualquer navio: a categoria, a orientação
+ * ({@link Compass}), a posição de referência e a lista de posições que ocupa
+ * na grelha. As subclasses concretas ({@link Barge}, {@link Caravel},
+ * {@link Carrack}, {@link Frigate} e {@link Galleon}) definem o tamanho
+ * do navio ({@link #getSize()}) e preenchem a lista de posições a partir da
+ * posição de referência e da orientação.
+ * </p>
+ * <p>
+ * Os navios são normalmente criados através de
+ * {@link #buildShip(String, Compass, Position)}.
+ * </p>
+ *
+ * @author fba
+ * @see IShip
+ * @see IPosition
+ */
 public abstract class Ship implements IShip {
 
+    /** Categoria usada para identificar um {@link Galleon}. */
     private static final String GALEAO = "galeao";
+
+    /** Categoria usada para identificar uma {@link Frigate}. */
     private static final String FRAGATA = "fragata";
+
+    /** Categoria usada para identificar uma {@link Carrack}. */
     private static final String NAU = "nau";
+
+    /** Categoria usada para identificar uma {@link Caravel}. */
     private static final String CARAVELA = "caravela";
+
+    /** Categoria usada para identificar uma {@link Barge}. */
     private static final String BARCA = "barca";
 
     /**
-     * @param shipKind
-     * @param bearing
-     * @param pos
-     * @return
+     * Cria um navio da categoria indicada.
+     * <p>
+     * As categorias reconhecidas são {@code "galeao"}, {@code "fragata"},
+     * {@code "nau"}, {@code "caravela"} e {@code "barca"} (em minúsculas e
+     * sem acentos).
+     * </p>
+     *
+     * @param shipKind a categoria do navio a criar
+     * @param bearing  a orientação do navio na grelha
+     * @param pos      a posição de referência do navio
+     * @return o navio criado, ou {@code null} se {@code shipKind} não
+     *         corresponder a nenhuma categoria conhecida
      */
     static Ship buildShip(String shipKind, Compass bearing, Position pos) {
         Ship s;
@@ -46,16 +79,33 @@ public abstract class Ship implements IShip {
     }
 
 
+    /** Categoria do navio (por exemplo, "galeao" ou "barca"). */
     private String category;
+
+    /** Orientação do navio na grelha. */
     private Compass bearing;
+
+    /** Posição de referência do navio, indicada na sua criação. */
     private IPosition pos;
+
+    /**
+     * Posições ocupadas pelo navio. Começa vazia e é preenchida pelas
+     * subclasses.
+     */
     protected List<IPosition> positions;
 
 
     /**
-     * @param category
-     * @param bearing
-     * @param pos
+     * Cria um navio com a categoria, orientação e posição de referência
+     * indicadas.
+     * <p>
+     * A lista de posições ocupadas começa vazia; cabe às subclasses
+     * preenchê-la.
+     * </p>
+     *
+     * @param category a categoria do navio
+     * @param bearing  a orientação do navio (não pode ser {@code null})
+     * @param pos      a posição de referência do navio (não pode ser {@code null})
      */
     public Ship(String category, Compass bearing, IPosition pos) {
         assert bearing != null;
@@ -67,10 +117,8 @@ public abstract class Ship implements IShip {
         positions = new ArrayList<>();
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IShip#getCategory()
+    /**
+     * {@inheritDoc}
      */
     @Override
     public String getCategory() {
@@ -78,36 +126,39 @@ public abstract class Ship implements IShip {
     }
 
     /**
-     * @return the positions
+     * Devolve as posições ocupadas pelo navio.
+     * <p>
+     * A lista devolvida é a própria lista interna do navio, não uma cópia.
+     * </p>
+     *
+     * @return a lista de posições do navio
      */
     public List<IPosition> getPositions() {
         return positions;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IShip#getPosition()
+    /**
+     * {@inheritDoc}
      */
     @Override
     public IPosition getPosition() {
         return pos;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IShip#getBearing()
+    /**
+     * {@inheritDoc}
      */
     @Override
     public Compass getBearing() {
         return bearing;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IShip#stillFloating()
+    /**
+     * {@inheritDoc}
+     * <p>
+     * O navio continua a flutuar enquanto pelo menos uma das suas posições
+     * não tiver sido atingida.
+     * </p>
      */
     @Override
     public boolean stillFloating() {
@@ -117,10 +168,8 @@ public abstract class Ship implements IShip {
         return false;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IShip#getTopMostPos()
+    /**
+     * {@inheritDoc}
      */
     @Override
     public int getTopMostPos() {
@@ -131,10 +180,8 @@ public abstract class Ship implements IShip {
         return top;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IShip#getBottomMostPos()
+    /**
+     * {@inheritDoc}
      */
     @Override
     public int getBottomMostPos() {
@@ -145,10 +192,8 @@ public abstract class Ship implements IShip {
         return bottom;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IShip#getLeftMostPos()
+    /**
+     * {@inheritDoc}
      */
     @Override
     public int getLeftMostPos() {
@@ -159,10 +204,8 @@ public abstract class Ship implements IShip {
         return left;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IShip#getRightMostPos()
+    /**
+     * {@inheritDoc}
      */
     @Override
     public int getRightMostPos() {
@@ -173,10 +216,14 @@ public abstract class Ship implements IShip {
         return right;
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * {@inheritDoc}
+     * <p>
+     * A comparação é feita com {@link IPosition#equals(Object)}, ou seja,
+     * apenas pela linha e coluna.
+     * </p>
      *
-     * @see battleship.IShip#occupies(battleship.IPosition)
+     * @param pos a posição a verificar (não pode ser {@code null})
      */
     @Override
     public boolean occupies(IPosition pos) {
@@ -188,10 +235,14 @@ public abstract class Ship implements IShip {
         return false;
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * {@inheritDoc}
+     * <p>
+     * Devolve {@code true} se alguma posição do outro navio estiver demasiado
+     * perto deste navio, de acordo com {@link #tooCloseTo(IPosition)}.
+     * </p>
      *
-     * @see battleship.IShip#tooCloseTo(battleship.IShip)
+     * @param other o outro navio a verificar (não pode ser {@code null})
      */
     @Override
     public boolean tooCloseTo(IShip other) {
@@ -205,10 +256,12 @@ public abstract class Ship implements IShip {
         return false;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IShip#tooCloseTo(battleship.IPosition)
+    /**
+     * {@inheritDoc}
+     * <p>
+     * Usa {@link IPosition#isAdjacentTo(IPosition)}, por isso são também
+     * consideradas as posições na diagonal e a própria posição.
+     * </p>
      */
     @Override
     public boolean tooCloseTo(IPosition pos) {
@@ -219,10 +272,13 @@ public abstract class Ship implements IShip {
     }
 
 
-    /*
-     * (non-Javadoc)
+    /**
+     * {@inheritDoc}
+     * <p>
+     * Se o navio não ocupar a posição indicada, nada acontece.
+     * </p>
      *
-     * @see battleship.IShip#shoot(battleship.IPosition)
+     * @param pos a posição atingida (não pode ser {@code null})
      */
     @Override
     public void shoot(IPosition pos) {
@@ -235,6 +291,12 @@ public abstract class Ship implements IShip {
     }
 
 
+    /**
+     * Devolve uma representação textual do navio.
+     *
+     * @return uma cadeia no formato
+     *         {@code "[<categoria> <orientação> <posição de referência>]"}
+     */
     @Override
     public String toString() {
         return "[" + category + " " + bearing + " " + pos + "]";
