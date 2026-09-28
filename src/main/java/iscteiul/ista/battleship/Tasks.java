@@ -1,6 +1,3 @@
-/**
- *
- */
 package iscteiul.ista.battleship;
 
 import java.util.Scanner;
@@ -9,21 +6,52 @@ import java.util.Scanner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Tarefas de teste em linha de comandos para o jogo Discoveries Battleship Game.
+ * <p>
+ * Cada tarefa ({@link #taskA()}, {@link #taskB()}, {@link #taskC()} e
+ * {@link #taskD()}) lê comandos e dados do teclado através de um
+ * {@link Scanner} e testa, de forma incremental, uma parte do jogo: primeiro
+ * os navios, depois a frota, a batota e, por fim, as rajadas de tiros.
+ * </p>
+ * <p>
+ * Os comandos reconhecidos são {@code nova}, {@code estado}, {@code mapa},
+ * {@code rajada}, {@code ver} e {@code desisto}. Os resultados são escritos
+ * através do {@link Logger} da classe.
+ * </p>
+ *
+ * @author fba
+ * @see Ship
+ * @see Fleet
+ * @see Game
+ */
 public class Tasks {
+
+    /** Logger usado para escrever as mensagens ao utilizador. */
     private static final Logger LOGGER = LogManager.getLogger();
 
+    /** Número de tiros de cada rajada. */
     private static final int NUMBER_SHOTS = 3;
 
+    /** Mensagem de despedida escrita quando o utilizador desiste. */
     private static final String GOODBYE_MESSAGE = "Bons ventos!";
 
-    /**
-     * Strings to be used by the user
-     */
+    /** Comando para criar uma nova frota. */
     private static final String NOVAFROTA = "nova";
+
+    /** Comando para terminar a tarefa. */
     private static final String DESISTIR = "desisto";
+
+    /** Comando para disparar uma rajada de tiros. */
     private static final String RAJADA = "rajada";
+
+    /** Comando para ver os tiros válidos já disparados. */
     private static final String VERTIROS = "ver";
+
+    /** Comando de batota: mostra a frota completa. */
     private static final String BATOTA = "mapa";
+
+    /** Comando para ver o estado da frota. */
     private static final String STATUS = "estado";
 
 
@@ -35,8 +63,12 @@ public class Tasks {
     /////////////////////////////////////////////////////////////////////////////
 
     /**
-     * This task tests the building up of ships: For each ship, reads positions and
-     * indicates whether the ship occupies each one of such positions or not
+     * Testa a construção de navios.
+     * <p>
+     * Enquanto houver dados no teclado, lê um navio e, se for válido, lê
+     * {@value #NUMBER_SHOTS} posições e indica, para cada uma, se o navio
+     * a ocupa ou não.
+     * </p>
      */
     public static void taskA() {
         Scanner in = new Scanner(System.in);
@@ -51,7 +83,13 @@ public class Tasks {
     }
 
     /**
-     * This task tests the building up of fleets
+     * Testa a construção de frotas.
+     * <p>
+     * Aceita os comandos {@code nova} (constrói uma frota nova),
+     * {@code estado} (mostra o estado da frota, se já existir) e
+     * {@code desisto} (termina). Qualquer outro comando é rejeitado com uma
+     * mensagem.
+     * </p>
      */
     public static void taskB() {
         Scanner in = new Scanner(System.in);
@@ -76,8 +114,11 @@ public class Tasks {
     }
 
     /**
-     * This task tests the building up of fleets and takes into consideration the
-     * possibility of cheating
+     * Testa a construção de frotas, com a possibilidade de fazer batota.
+     * <p>
+     * Aceita os mesmos comandos que {@link #taskB()} e ainda {@code mapa},
+     * que escreve a frota completa.
+     * </p>
      */
     public static void taskC() {
         Scanner in = new Scanner(System.in);
@@ -105,7 +146,13 @@ public class Tasks {
     }
 
     /**
-     * This task also tests the fighting element of a round of three shots
+     * Testa também a parte do combate, com rajadas de {@value #NUMBER_SHOTS} tiros.
+     * <p>
+     * Além dos comandos de {@link #taskC()}, aceita {@code rajada} (dispara
+     * uma rajada e escreve o número de tiros certeiros, inválidos e repetidos
+     * e quantos navios restam) e {@code ver} (mostra os tiros válidos já
+     * disparados). Quando já não restam navios, escreve uma mensagem final.
+     * </p>
      */
     public static void taskD() {
 
@@ -150,10 +197,20 @@ public class Tasks {
     }
 
     /**
-     * This operation allows the build up of a fleet, given user data
+     * Constrói uma frota a partir dos dados lidos do teclado.
+     * <p>
+     * Lê navios até o ciclo terminar, adicionando cada navio válido à frota.
+     * Se um navio não puder ser adicionado (por exemplo, por tocar noutro),
+     * ou se a categoria for desconhecida, escreve uma mensagem e continua.
+     * </p>
+     * <p>
+     * <strong>Nota:</strong> a condição do ciclo é
+     * {@code i <= Fleet.FLEET_SIZE}, pelo que pode ler mais um navio do que
+     * {@code Fleet.FLEET_SIZE}. Convém confirmar se é intencional.
+     * </p>
      *
-     * @param in The scanner to read from
-     * @return The fleet that has been built
+     * @param in o {@link Scanner} de onde ler os dados
+     * @return a frota construída
      */
     static Fleet buildFleet(Scanner in) {
         assert in != null;
@@ -178,10 +235,16 @@ public class Tasks {
     }
 
     /**
-     * This operation reads data about a ship, build it and returns it
+     * Lê os dados de um navio, cria-o e devolve-o.
+     * <p>
+     * Lê, por esta ordem, a categoria (por exemplo {@code "nau"}), a posição
+     * (linha e coluna) e a orientação (um carácter, convertido com
+     * {@link Compass#charToCompass(char)}).
+     * </p>
      *
-     * @param in The scanner to read from
-     * @return The created ship based on the data that has been read
+     * @param in o {@link Scanner} de onde ler os dados
+     * @return o navio criado, ou {@code null} se a categoria for desconhecida
+     * @see Ship#buildShip(String, Compass, Position)
      */
     static Ship readShip(Scanner in) {
         String shipKind = in.next();
@@ -192,10 +255,13 @@ public class Tasks {
     }
 
     /**
-     * This operation allows reading a position in the map
+     * Lê uma posição do mapa.
+     * <p>
+     * Lê dois inteiros, primeiro a linha e depois a coluna.
+     * </p>
      *
-     * @param in The scanner to read from
-     * @return The position that has been read
+     * @param in o {@link Scanner} de onde ler os dados
+     * @return a posição lida
      */
     static Position readPosition(Scanner in) {
         int row = in.nextInt();
@@ -204,11 +270,16 @@ public class Tasks {
     }
 
     /**
-     * This operation allows firing a round of shots (three) over a fleet, in the
-     * context of a game
+     * Dispara uma rajada de {@value #NUMBER_SHOTS} tiros sobre a frota, no
+     * contexto de um jogo.
+     * <p>
+     * Para cada tiro lê uma posição e dispara-a com
+     * {@link IGame#fire(IPosition)}. Se o tiro afundar um navio, escreve uma
+     * mensagem com a categoria desse navio.
+     * </p>
      *
-     * @param in   The scanner to read from
-     * @param game The context game while fleet is being attacked
+     * @param in   o {@link Scanner} de onde ler as posições
+     * @param game o jogo em cujo contexto a frota está a ser atacada
      */
     static void firingRound(Scanner in, IGame game) {
         for (int i = 0; i < NUMBER_SHOTS; i++) {
