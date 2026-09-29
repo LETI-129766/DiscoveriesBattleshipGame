@@ -1,4 +1,3 @@
-```java
 package iscteiul.ista.battleship;
 
 /**
@@ -30,11 +29,11 @@ public class Barge extends Ship {
     /**
      * Returns the size of the barge.
      *
-     * @return the size of the barge, which is always {@value #SIZE}
+     * @return the number of positions occupied by the barge
      */
     @Override
     public Integer getSize() {
         return SIZE;
     }
 }
-```
+
